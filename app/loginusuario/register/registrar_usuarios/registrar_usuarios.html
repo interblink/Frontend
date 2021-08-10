@@ -1,0 +1,58 @@
+<h2 class="register-title text-center">Registrar Usuario</h2>
+
+    <form class="register" [formGroup]="contacto">
+      
+        <div class="form-group register-switch">
+
+            <input type="radio" [(ngModel)]="contacto2.sexo" formControlName="sexo" name="sexo"  class="form-control" value="F" id="sex_f" class="register-switch-input" checked>
+            <label for="sex_f" class="register-switch-label">Femenino</label>
+            <input type="radio"  formControlName="sexo" name="sexo" value="M" id="sex_m" class="register-switch-input">
+            <label for="sex_m" class="register-switch-label">Masculino</label>
+            <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                <div *ngIf="f.nombre.errors.required">Por favor, ingresa tus Nombres y Apellidos</div>
+            </div>
+            </div>
+
+        <div class="form-group">
+            <label>Nombres y Apellidos</label>
+            <input type="text" [(ngModel)]="contacto2.nombre" formControlName="nombre" class="form-control register-input"  [ngClass]="{ 'is-invalid': submitted && f.nombre.errors }" />
+            <div *ngIf="submitted && f.nombre.errors" class="invalid-feedback">
+                <div *ngIf="f.nombre.errors.required">Por favor, ingresa tus Nombres y Apellidos</div>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label>Correo</label>
+            <input type="text" [(ngModel)]="contacto2.correo" formControlName="correo" class="form-control register-input" [ngClass]="{ 'is-invalid': submitted && f.correo.errors }" />
+            <div *ngIf="submitted && f.correo.errors" class="invalid-feedback">
+                <div *ngIf="f.correo.errors.required">El email es obligatorio</div>
+                <div *ngIf="f.correo.errors.correo">Por favor, ingresa tu Email</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" [(ngModel)]="contacto2.username" formControlName="username" class="form-control register-input"  [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                <div *ngIf="f.username.errors.required">Por favor, ingresa tu Username</div>
+            </div>
+        </div> 
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="text" [(ngModel)]="contacto2.password" formControlName="password" class="form-control register-input"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Por favor, ingresa tu password</div>
+            </div>
+        </div> 
+
+
+
+         <div style="width:100%; height:100%" class="form-group">
+                  
+            <button style="margin:10px" style="width:100%; height:100%" class="btn btn-success" (click)="Registrar()"> Registrar </button>
+  
+      </div>
+
+    </form>
+

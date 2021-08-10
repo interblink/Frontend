@@ -1,0 +1,30 @@
+
+<h2 class="register-title text-center">Login Usuario</h2>
+
+<form class="register" [formGroup]="contacto">
+  
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" [(ngModel)]="contacto2.username" formControlName="username" class="form-control register-input"  [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Por favor, ingresa tu Username</div>
+        </div>
+    </div> 
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="text" [(ngModel)]="contacto2.password" formControlName="password" class="form-control register-input"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Por favor, ingresa tu password</div>
+        </div>
+    </div> 
+
+
+
+     <div style="width:100%; height:100%" class="form-group">
+              
+        <button style="margin:15px" style="width:100%; height:100% "  class="btn btn-success" (click)="IniciarSeccion()"> Iniciar Seccion </button>
+
+  </div>
+
+</form>

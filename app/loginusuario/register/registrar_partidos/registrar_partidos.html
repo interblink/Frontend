@@ -1,0 +1,61 @@
+
+<h2 class="register-title text-center">Registrar Partidos</h2>
+
+
+<!-- <p>{{username}}</p> -->
+
+<form class="register" [formGroup]="contacto">
+      
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="register-input" value="{{username}}" disabled/>
+         </div> 
+         <div class="form-group">
+         <label>Equipo Local</label>
+            
+                 <select class="register-input" [(ngModel)]="contacto2.equipo_local" formControlName="equipo_local" name="equipo_local">
+                  <option [value]="equipo" *ngFor="let equipo of equipos">{{equipo.nombre_equipo}}</option>
+                  </select>
+               </div>   
+                  <div class="form-group">
+               <label>Equipo Visitante</label>
+               <select class="register-input" [(ngModel)]="contacto2.equipo_visitante" formControlName="equipo_visitante" name="equipo_visitante">
+                  <option [value]="equipo" *ngFor="let equipo of equipos">{{equipo.nombre_equipo}}</option>
+                  </select>
+                </div>
+
+                  <div class="form-group">
+               <label>Fecha del partido</label>
+               <input class="register-input" [(ngModel)]="contacto2.registeredOn" formControlName="registeredOn"  name="registeredOn" type="date" />
+               </div>
+
+               <div class="form-group">
+               <label>Goles local</label>
+               <input class="register-input"  [(ngModel)]="contacto2.goles_local_1" formControlName="goles_local_1" name="goles_local" type="text" [ngClass]="{ 'is-invalid': submitted && f.goles_local_1.errors }"/>
+               <div *ngIf="submitted && f.username.errors" class="invalid-feedback"> -->
+               <div *ngIf="f.goles_local_1.errors.required">Por favor, ingresa tu Username</div>-->
+               </div>
+               </div> 
+
+
+               <div class="form-group">
+                  <label>Goles Visitante</label>
+                  <input class="register-input"  [(ngModel)]="contacto2.equipo_visitante" formControlName="goles_local_1" name="goles_local" type="text" [ngClass]="{ 'is-invalid': submitted && f.equipo_visitante.errors }"/>
+                  <div *ngIf="submitted && f.equipo_visitante.errors" class="invalid-feedback"> -->
+                  <div *ngIf="f.equipo_visitante.errors.required">Por favor, ingresa tu Username</div>-->
+                  </div>
+                  </div> 
+               
+
+         
+
+
+         <div style="width:100%; height:100%" class="form-group">
+                  
+            <button style="margin:10px" style="width:100%; height:100%" class="btn btn-success" (click)="Registrar_equipo_partido()"> Registrar </button>
+  
+      </div>
+
+    </form>
+
+  

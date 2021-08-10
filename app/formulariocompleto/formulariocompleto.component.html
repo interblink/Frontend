@@ -1,0 +1,46 @@
+<p>formulariocompleto works!</p>
+
+
+<div align="center">
+    <h1>LISTA DE USUARIOS REGISTRADOS</h1>
+    <table border="1" *ngIf="hayRegistros(); else sin">
+      <tr>
+        <td>ID</td>
+        <td>Sexo</td>
+        <td>Nombre</td>
+        <td>Correo</td>
+        <td>Username</td>
+        <td>Password</td>
+        <td>BORRAR</td>
+        <td>SELECCIONAR</td>
+      </tr>
+      <tr *ngFor="let usuario of usuarios">
+        <td> {{usuario.idUsuario }} </td>
+        <td> {{usuario.sexo }} </td>
+        <td> {{usuario.nombre }} </td>
+        <td> {{usuario.correo }} </td>
+        <td> {{usuario.username }} </td>
+        <td> {{usuario.password }} </td>
+        <td> <button (click)="bajaUsuario(usuario.idUsuario)"> Borrar </button> </td>
+        <td> <button (click)="seleccionarUsuario(usuario.idUsuario)"> Seleccionar </button> </td>
+      </tr>
+    </table>
+  
+    <ng-template #sin>
+      <p>No hay usuarios registrados.</p>
+    </ng-template>
+  
+    <div>
+      <p> Sexo: <input type="text" [(ngModel)]="usuario.sexo" /> </p>
+      <p> Nombre: <input type="text" [(ngModel)]="usuario.nombre" /> </p>
+      <p> Correo: <input type="text" [(ngModel)]="usuario.correo" /> </p>
+      <p> Username: <input type="text" [(ngModel)]="usuario.username" /> </p>
+      <p> Password: <input type="text" [(ngModel)]="usuario.password" /> </p>
+      <p> 
+        <button (click)="altaUsuario()"> AGREGAR </button> 
+        <button (click)="editarUsuario()"> MODIFICAR </button> 
+      </p>
+    </div>
+  
+  </div>
+  

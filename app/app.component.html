@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+  <a class="navbar-brand" routerLink="pagina_principal" routerLinkActive="active"><h2>Barra de Login y Registro</h2></a>
+
+  <div class="collapse navbar-collapse" id="navbarsExample">
+  <ul class="navbar-nav mr-auto">
+   
+
+    <li class="nav-item">  <!-- boton de home -->
+  <a class="nav-link" *ngIf="loginbtn" routerLink="pagina_principal" routerLinkActive="active"><h2>Pagina Principal</h2></a>
+  </li>
+
+  <li class="nav-item"> <!-- boton de login -->
+  <a class="nav-link" *ngIf="loginbtn" routerLink="ingresar" routerLinkActive="active"><h2>Ingresar</h2></a>
+  </li>
+
+  <li class="nav-item"> <!-- boton de logout -->
+  <button type="button" *ngIf="logoutbtn" class="btn btn-block" (click)="logout()"><h2>Desconectarse</h2></button>
+  </li>
+
+  
+  <li class="nav-item">
+  <a class="nav-link" *ngIf="loginbtn" routerLink="registrar_usuarios" routerLinkActive="active"><h2>Registrar Usuario</h2></a>
+  </li>
+
+  
+
+  <li class="nav-item">
+  <a class="nav-link" *ngIf="logoutbtn" routerLink="area_administradora" routerLinkActive="active"><h2>Area Admnistrador</h2></a>
+  </li>
+  
+  </ul>
+  </div>
+  </nav>
+  
+
+<router-outlet></router-outlet>
+
+

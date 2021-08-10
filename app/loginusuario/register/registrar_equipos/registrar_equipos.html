@@ -1,0 +1,46 @@
+<div align="center">
+    <h1>LISTA DE EQUIPOS</h1>
+    <table border="1" *ngIf="hayRegistros(); else sin">
+      <tr >
+        <td class="colorfilaprimera">ID</td>
+        <td class="colorfilaprimera">Nombre Equipo</td>
+       <!-- <td class="colorfilaprimera">BORRAR</td> -->
+        <td class="colorfilaprimera">SELECCIONAR</td>
+      </tr>
+      <tr *ngFor="let equipo of equipos">
+        
+        <td class="color_fila_tabla_dinamica"> {{equipo.id_equipo }} </td>
+        <td class="color_fila_tabla_dinamica"> {{equipo.nombre_equipo }} </td>
+       <!-- <td class="color_fila_tabla_dinamica"> <button (click)="bajaEquipos(equipo.id_equipo)"> Borrar </button> </td>-->
+        <td class="color_fila_tabla_dinamica"> <button (click)="seleccionarEquipos(equipo.id_equipo)"> Seleccionar </button> </td>
+      </tr>
+    </table>
+  
+    <ng-template #sin>
+      <p>No hay equipos registrados.</p>
+    </ng-template>
+  
+    <div>
+      <br>
+      <p> Insertar/Modificar Equipos:<input type="text" [(ngModel)]="equipo.nombre_equipo" /> </p>
+      
+      <p> 
+        <button (click)="altaEquipos()"> AGREGAR </button> 
+        <button (click)="editarEquipos()"> MODIFICAR </button> 
+      </p>
+    </div>
+  
+  </div>
+
+
+  <div class="container center">
+
+    <br>
+
+<ul>
+    <li><a href="/area_administradora">Volver Area Administradora</a></li>
+  </ul>
+
+
+
+</div>

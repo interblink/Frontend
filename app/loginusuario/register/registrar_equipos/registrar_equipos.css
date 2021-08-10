@@ -1,0 +1,84 @@
+  .center{
+text-align: center;
+
+
+  }
+
+
+  ul {
+    padding: 0;
+    width: 100%;
+  }
+  
+  li {
+    display: inline;
+  }
+  
+  a {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 19.5%;
+    margin-right: 0.625%;
+    text-align: center;
+    line-height: 3;
+    color: black;
+  }
+  
+  li:last-child a {
+    margin-right: 0;
+  }
+  
+  a:link, a:visited, a:focus {
+    background: rgb(124, 162, 209);
+  }
+  
+  a:hover {
+    background: orange;
+  }
+  
+  a:active {
+    background: red;
+    color: white;
+  }
+
+/* tabla arregalndo*/
+
+table {
+  table-layout: fixed;
+  width: 50%;
+  border-collapse: collapse;
+  border: 3px solid rgb(127, 82, 225);
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 20px;
+}
+
+.colorfilaprimera{
+background: rgb(231, 121, 78);
+text-align: center;
+
+}
+
+.color_fila_tabla_dinamica{
+  
+  text-align: center;
+  
+  }
